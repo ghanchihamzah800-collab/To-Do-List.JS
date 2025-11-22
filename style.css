@@ -1,0 +1,118 @@
+*{
+    margin: 0; /*removes all browser's default Outer-margins */
+    padding: ; /* removes browser's default element spacing*/
+    font-family: "Comic Sans MS"; /* A cool font */
+    box-sizing: border-box; /*Includes padding & borders within element size for easier layout control */
+}  
+
+.container{
+    width: 100%; /* Containers  span full width size of any screen */
+    height: 100vh; /* Container's full height with expandable height if extra scrollable content */
+    background: linear-gradient(180deg, rgba(180, 21, 229, 0.747), rgb(47, 14, 195)); /* A cool Gradient Color */
+    padding: 10px; /* A minimum padding to made Content neater */
+}
+
+.todo-function{
+    width: 100%; /* Will atke full span width under the container */
+    max-width: 540px; /* To set a width to the container so it doesn't grow more than 540px */
+    background: #fff; /* Coloring container white */
+    margin: 50px auto; /* This is done to centre the container */
+    padding: 40px 30px 70px; /* Inner spacing to make it look smooth and centrazie the text*/
+    border-radius: 10px; /* Make the corner of container circular */
+}
+
+.todo-function h2{
+    color: #002765; /* Text Color */
+    display:flex; /* Converted to Flex cointainer to aligh multiple element inside container easily */ 
+    margin-bottom: 20px;
+    align-items: center; /* Vertically centralized */
+}
+
+.row{
+    width: 100%;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px ;
+    margin-bottom: 25px;
+}
+
+input{
+    flex:1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 20px;
+}
+
+::placeholder{
+    font-size: medium;
+}
+
+button{
+    width: 150px; 
+    border: none;
+    outline: none;
+    background: linear-gradient(90deg, #edeef0, rgb(47, 14, 195));
+    border-radius: 30px;
+    padding: 20px 20px 20px 60px;
+    font-size: large;
+    color: #ffffffd0;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul li{
+    list-style: none;
+    font-size: large;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* ::before simply means before rendering the other content this should be the */
+
+ul li::before{ 
+/* This will create a circle in li before shooting the tick image */
+    content:''; /* Creates a blank element before each <li> */
+    position:absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-color:transparent;
+    border: 2px solid #c77cc989;
+    background-size: cover;
+    background-position: center;
+    top: 8px;
+    left: 4px;
+}
+
+ul li.checked{ /* Creates a grey line through */
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{ 
+    background-image: url("tick2.png");
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+ul li span:hover{
+    background: #edeef0;
+    background-size: cover;
+    background-position: center;
+}
